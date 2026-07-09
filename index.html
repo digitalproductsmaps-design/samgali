@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samgali Shisanyama — The Masters of Shis' Nyama</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --red: #e63946;
+            --red-dark: #c1121f;
+            --yellow: #ffb703;
+            --yellow-light: #ffcb47;
+            --black: #1a1a1a;
+            --gray: #f5f5f5;
+            --white: #ffffff;
+            --shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .brand {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26,26,26,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--red);
+        }
+
+        .nav-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            color: var(--yellow);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--yellow);
+        }
+
+        .mobile-menu {
+            display: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--black) 0%, #2d2d2d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(230,57,70,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-logo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid var(--yellow);
+            margin-bottom: 2rem;
+            object-fit: cover;
+            box-shadow: 0 0 40px rgba(255,183,3,0.3);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            color: var(--yellow);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h1 span {
+            color: var(--red);
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: var(--red);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(230,57,70,0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(230,57,70,0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--yellow);
+            border: 2px solid var(--yellow);
+        }
+
+        .btn-secondary:hover {
+            background: var(--yellow);
+            color: var(--black);
+        }
+
+        .free-badge {
+            display: inline-block;
+            background: var(--yellow);
+            color: var(--black);
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-top: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            text-align: center;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Menu */
+        .menu-section {
+            background: var(--gray);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--red);
+        }
+
+        .menu-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .menu-info {
+            padding: 1.5rem;
+        }
+
+        .menu-info h3 {
+            font-size: 1.8rem;
+            color: var(--black);
+            margin-bottom: 0.3rem;
+        }
+
+        .menu-desc {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--red);
+            margin-bottom: 1rem;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .qty-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--red);
+            background: var(--white);
+            color: var(--red);
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qty-btn:hover {
+            background: var(--red);
+            color: var(--white);
+        }
+
+        .qty-display {
+            font-size: 1.3rem;
+            font-weight: 700;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .add-order-btn {
+            width: 100%;
+            padding: 0.9rem;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .add-order-btn:hover {
+            background: var(--red);
+        }
+
+        /* Order Summary */
+        .order-panel {
+            background: var(--black);
+            color: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 100px;
+        }
+
+        .order-panel h3 {
+            font-size: 2rem;
+            color: var(--yellow);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .order-total {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.2rem 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--yellow);
+            border-top: 2px solid var(--red);
+            margin-top: 0.5rem;
+        }
+
+        .empty-cart {
+            text-align: center;
+            color: #888;
+            padding: 2rem 0;
+            font-style: italic;
+        }
+
+        .generate-order-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--yellow);
+            color: var(--black);
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .generate-order-btn:hover {
+            background: var(--yellow-light);
+            transform: scale(1.02);
+        }
+
+        .generate-order-btn:disabled {
+            background: #444;
+            color: #888;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Order Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2.5rem;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal h2 {
+            font-size: 2.5rem;
+            color: var(--red);
+            margin-bottom: 0.5rem;
+        }
+
+        .order-number-box {
+            background: var(--gray);
+            border: 3px dashed var(--red);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .order-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--black);
+            letter-spacing: 3px;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        .payment-options {
+            display: grid;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .payment-option {
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .payment-option:hover, .payment-option.selected {
+            border-color: var(--red);
+            background: #fff5f5;
+        }
+
+        .payment-option .icon {
+            font-size: 1.5rem;
+        }
+
+        .payment-option strong {
+            display: block;
+            color: var(--black);
+        }
+
+        .payment-option span {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: scale(1.05);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            height: 280px;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 1.5rem;
+            color: white;
+        }
+
+        /* Contact */
+        .contact-section {
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact-section .section-title {
+            color: var(--yellow);
+        }
+
+        .contact-section .section-subtitle {
+            color: #aaa;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: #2a2a2a;
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid #333;
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--red);
+            transform: translateY(-3px);
+        }
+
+        .contact-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h4 {
+            color: var(--yellow);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-card p, .contact-card a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .contact-card a:hover {
+            color: var(--yellow);
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: #666;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: var(--red);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu {
+                display: block;
+            }
+            .hero {
+                padding-top: 5rem;
+            }
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            .order-panel {
+                position: static;
+            }
+            .modal {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--black);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--yellow);
+            transform: translateX(150%);
+            transition: transform 0.4s;
+            z-index: 3000;
+            font-weight: 500;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="nav-logo">SAMGALI SHISANYAMA</a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#order" style="color: var(--yellow);">Order Now</a></li>
+        </ul>
+        <div class="mobile-menu">☰</div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <img src="logo.jpg" alt="Samgali Shisanyama Logo" class="hero-logo" onerror="this.style.display='none'">
+            <h1>SAMGALI <span>SHISANYAMA</span></h1>
+            <p class="tagline">"The Masters of Shis' Nyama"</p>
+            <div class="hero-cta">
+                <a href="#menu" class="btn btn-primary">View Menu</a>
+                <a href="#order" class="btn btn-secondary">Place Order</a>
+            </div>
+            <div class="free-badge">🛵 Free Delivery — T&Cs Apply</div>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section class="menu-section" id="menu">
+        <h2 class="section-title">OUR MENU</h2>
+        <p class="section-subtitle">Authentic braai flavour, made with passion</p>
+        
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: start;">
+            <div class="menu-grid" id="menuGrid">
+                <!-- Menu items injected by JS -->
+            </div>
+
+            <!-- Order Summary Panel -->
+            <div class="order-panel" id="order">
+                <h3>Your Order</h3>
+                <div id="orderItems">
+                    <div class="empty-cart">Your cart is empty.<br>Add some fire to it! 🔥</div>
+                </div>
+                <div id="orderTotalSection" style="display: none;">
+                    <div class="order-total">
+                        <span>Total</span>
+                        <span id="totalPrice">R0.00</span>
+                    </div>
+                    <button class="generate-order-btn" id="generateBtn" onclick="generateOrder()" disabled>
+                        Generate Order Number
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+        <h2 class="section-title">GALLERY</h2>
+        <p class="section-subtitle">A taste of what we serve</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="samgalic.jpg" alt="Braai Meat" onerror="this.parentElement.style.display='none'">
+                <div class="gallery-overlay">
+                    <h4>Fresh Off The Grill</h4>
+                </div>
+            </div>
+           <div class="gallery-item">
+                <img src="samgalim.jpg" alt="Samgali Brand" onerror="this.parentElement.style.display='none'">
+                <div class="gallery-overlay">
+                    <h4>Samgali Shisanyama</h4>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="muffins3.jpg" alt="Fresh Muffins" onerror="this.parentElement.style.display='none'">
+                <div class="gallery-overlay">
+                    <h4>Fresh Bakes</h4>
+                </div>
+            </div>
+            
+				 <div class="gallery-item">
+                <img src="drinks2.jpg" alt="Cold Drinks" onerror="this.parentElement.style.display='none'">
+                <div class="gallery-overlay">
+                    <h4>Cold Beverages</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">GET IN TOUCH</h2>
+        <p class="section-subtitle">Call us now for the best shisanyama in town</p>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="icon">📞</div>
+                <h4>Phone 1</h4>
+                <a href="tel:78449232">7844 9232</a>
+            </div>
+            <div class="contact-card">
+                <div class="icon">📱</div>
+                <h4>Phone 2 / WhatsApp</h4>
+                <a href="https://wa.me/26779197707" target="_blank">7919 7707</a>
+            </div>
+            <div class="contact-card">
+                <div class="icon">🛵</div>
+                <h4>Delivery</h4>
+                <p>Free Delivery<br><small>T&Cs Apply</small></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Samgali Shisanyama. <span>The Masters of Shis' Nyama.</span> All rights reserved.</p>
+    </footer>
+
+    <!-- Order Modal -->
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <h2>Order Ready!</h2>
+            <p style="color: #666; margin-bottom: 1rem;">Your order details are below</p>
+            
+            <div class="order-number-box">
+                <div style="font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;">ORDER REFERENCE</div>
+                <div class="order-number" id="modalOrderNumber">SG-000000</div>
+            </div>
+
+            <div style="text-align: left; margin: 1.5rem 0;">
+                <p style="font-weight: 600; margin-bottom: 0.5rem;">Order Summary:</p>
+                <div id="modalOrderSummary" style="font-size: 0.95rem; color: #555; line-height: 1.8;"></div>
+                <div style="border-top: 2px solid #eee; margin-top: 1rem; padding-top: 1rem; font-size: 1.2rem; font-weight: 700; color: var(--black);">
+                    Total: <span id="modalTotal">R0.00</span>
+                </div>
+            </div>
+
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">Select payment method:</p>
+            <div class="payment-options">
+                <div class="payment-option selected" onclick="selectPayment(this, 'MoMo Pay')">
+                    <div class="icon">📲</div>
+                    <div>
+                        <strong>MoMo Pay</strong>
+                        <span>Send payment via MoMo</span>
+                    </div>
+                </div>
+                <div class="payment-option" onclick="selectPayment(this, 'EFT')">
+                    <div class="icon">🏦</div>
+                    <div>
+                        <strong>Bank EFT</strong>
+                        <span>Electronic Funds Transfer</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="whatsapp-btn" id="whatsappLink" target="_blank">
+                <span>📱</span> Send Order to WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">Item added to order!</div>
+
+    <script>
+        // Menu Data
+        const menuItems = [
+            {
+                id: 'chicken-dust',
+                name: 'Chicken Dust',
+                desc: 'Perfectly seasoned, flame-grilled chicken — the house specialty. Tender, smoky, and full of flavour.',
+                price: 35,
+                image: 'samgalic.jpg'
+            },
+            {
+                id: 'braai-vors',
+                name: 'Braai Vors',
+                desc: 'Traditional boerewors made for the braai. Juicy, spiced just right, and cooked over open coals.',
+                price: 40,
+                image: 'samgaliv.jpeg'
+            },
+            {
+                id: 'combo-meal',
+                name: 'Samgali Combo',
+                desc: 'The best of both worlds — Chicken Dust + Braai Vors with a side of your choice.',
+                price: 140,
+                image: 'samgalim.jpg'
+            },
+            {
+                id: 'drinks',
+                name: 'Cold Drinks',
+                desc: 'Selection of soft drinks, energy drinks, and juices to quench your thirst.',
+                price: 20,
+                image: 'drinks2.jpg'
+            },
+            {
+                id: 'muffins',
+                name: 'Fresh Muffins',
+                desc: 'Homemade-style muffins, baked fresh and perfect for a sweet finish.',
+                price: 15,
+                image: 'muffins3.jpg'
+            }
+        ];
+
+        // State
+        let cart = {};
+        let selectedPayment = 'MoMo Pay';
+
+        // Render Menu
+        function renderMenu() {
+            const grid = document.getElementById('menuGrid');
+            grid.innerHTML = menuItems.map(item => `
+                <div class="menu-card">
+                    <img src="${item.image}" alt="${item.name}" class="menu-img" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22220%22><rect fill=%22%23f5f5f5%22 width=%22400%22 height=%22220%22/><text fill=%22%23999%22 x=%2250%%22 y=%2250%%22 text-anchor=%22middle%22 font-size=%2220%22>${item.name}</text></svg>'">
+                    <div class="menu-info">
+                        <h3>${item.name}</h3>
+                        <p class="menu-desc">${item.desc}</p>
+                        <div class="price">R${item.price.toFixed(2)}</div>
+                        <div class="quantity-control">
+                            <button class="qty-btn" onclick="updateQty('${item.id}', -1)">−</button>
+                            <span class="qty-display" id="qty-${item.id}">0</span>
+                            <button class="qty-btn" onclick="updateQty('${item.id}', 1)">+</button>
+                        </div>
+                        <button class="add-order-btn" onclick="addToCart('${item.id}')">Add to Order</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Update Quantity Display
+        function updateQty(id, change) {
+            const qtyEl = document.getElementById(`qty-${id}`);
+            let current = parseInt(qtyEl.textContent) || 0;
+            let newQty = current + change;
+            if (newQty < 0) newQty = 0;
+            if (newQty > 50) newQty = 50;
+            qtyEl.textContent = newQty;
+        }
+
+        // Add to Cart
+        function addToCart(id) {
+            const qty = parseInt(document.getElementById(`qty-${id}`).textContent) || 0;
+            if (qty === 0) {
+                showToast('Please select a quantity first!');
+                return;
+            }
+            
+            const item = menuItems.find(i => i.id === id);
+            cart[id] = {
+                ...item,
+                quantity: qty
+            };
+            
+            // Reset display
+            document.getElementById(`qty-${id}`).textContent = '0';
+            updateOrderPanel();
+            showToast(`${item.name} added!`);
+        }
+
+        // Update Order Panel
+        function updateOrderPanel() {
+            const container = document.getElementById('orderItems');
+            const totalSection = document.getElementById('orderTotalSection');
+            const generateBtn = document.getElementById('generateBtn');
+            const items = Object.values(cart);
+            
+            if (items.length === 0) {
+                container.innerHTML = '<div class="empty-cart">Your cart is empty.<br>Add some fire to it! 🔥</div>';
+                totalSection.style.display = 'none';
+                generateBtn.disabled = true;
+                return;
+            }
+            
+            let total = 0;
+            container.innerHTML = items.map(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                return `
+                    <div class="order-item">
+                        <span>${item.name} × ${item.quantity}</span>
+                        <span>R${subtotal.toFixed(2)}</span>
+                    </div>
+                `;
+            }).join('');
+            
+            document.getElementById('totalPrice').textContent = `R${total.toFixed(2)}`;
+            totalSection.style.display = 'block';
+            generateBtn.disabled = false;
+        }
+
+        // Generate Order
+        function generateOrder() {
+            const items = Object.values(cart);
+            if (items.length === 0) return;
+            
+            // Generate unique order number
+            const timestamp = Date.now().toString(36).toUpperCase();
+            const random = Math.random().toString(36).substring(2, 6).toUpperCase();
+            const orderNumber = `SG-${timestamp}${random}`;
+            
+            let total = 0;
+            let summaryText = '';
+            
+            items.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                summaryText += `• ${item.name} × ${item.quantity} = R${subtotal.toFixed(2)}\n`;
+            });
+            
+            // Update modal
+            document.getElementById('modalOrderNumber').textContent = orderNumber;
+            document.getElementById('modalOrderSummary').innerHTML = summaryText.replace(/\n/g, '<br>');
+            document.getElementById('modalTotal').textContent = `R${total.toFixed(2)}`;
+            
+            // Build WhatsApp message — sends order directly, no screenshot needed
+            const phone = '26779197707';
+            const message = encodeURIComponent(
+                `*NEW ORDER — ${orderNumber}*\n\n` +
+                `*Payment Method:* ${selectedPayment}\n` +
+                `*Order Reference:* ${orderNumber}\n\n` +
+                `*Order Details:*\n${summaryText}\n` +
+                `*Total: R${total.toFixed(2)}*\n\n` +
+                `Please confirm this order.`
+            );
+            
+            document.getElementById('whatsappLink').href = `https://wa.me/${phone}?text=${message}`;
+            
+            // Show modal
+            document.getElementById('orderModal').classList.add('active');
+        }
+
+        // Select Payment
+        function selectPayment(el, method) {
+            document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('selected'));
+            el.classList.add('selected');
+            selectedPayment = method;
+        }
+
+        // Close Modal
+        function closeModal() {
+            document.getElementById('orderModal').classList.remove('active');
+        }
+
+        // Toast
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
+        // Close modal on overlay click
+        document.getElementById('orderModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) closeModal();
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', () => {
+            const links = document.querySelector('.nav-links');
+            links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+            if (links.style.display === 'flex') {
+                links.style.position = 'absolute';
+                links.style.top = '100%';
+                links.style.left = '0';
+                links.style.right = '0';
+                links.style.flexDirection = 'column';
+                links.style.background = 'var(--black)';
+                links.style.padding = '1rem';
+            }
+        });
+
+        // Initialize
+        renderMenu();
+    </script>
+</body>
+</html>
