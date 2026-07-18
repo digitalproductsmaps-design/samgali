@@ -337,7 +337,7 @@
             background: var(--black);
             color: var(--white);
             border-radius: 20px;
-            padding: 2.5rem;
+            padding: 1.75rem;
             margin-top: 3rem;
             box-shadow: var(--shadow);
             position: sticky;
@@ -425,9 +425,9 @@
 
         .modal {
             background: var(--white);
-            border-radius: 24px;
-            padding: 2.5rem;
-            max-width: 500px;
+            border-radius: 18px;
+            padding: 1.75rem;
+            max-width: 350px;
             width: 100%;
             text-align: center;
             position: relative;
@@ -440,7 +440,7 @@
         }
 
         .modal h2 {
-            font-size: 2.5rem;
+            font-size: 1.75rem;
             color: var(--red);
             margin-bottom: 0.5rem;
         }
@@ -448,13 +448,13 @@
         .order-number-box {
             background: var(--gray);
             border: 3px dashed var(--red);
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
+            border-radius: 12px;
+            padding: 1.05rem;
+            margin: 1.05rem 0;
         }
 
         .order-number {
-            font-size: 2.2rem;
+            font-size: 1.54rem;
             font-weight: 800;
             color: var(--black);
             letter-spacing: 3px;
@@ -463,12 +463,12 @@
 
         .payment-options {
             display: grid;
-            gap: 1rem;
-            margin: 1.5rem 0;
+            gap: 0.7rem;
+            margin: 1.05rem 0;
         }
 
         .payment-option {
-            padding: 1rem;
+            padding: 0.7rem;
             border: 2px solid #ddd;
             border-radius: 12px;
             cursor: pointer;
@@ -504,11 +504,11 @@
             gap: 0.5rem;
             background: #25D366;
             color: white;
-            padding: 1rem 2rem;
+            padding: 0.7rem 1.4rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            margin-top: 1rem;
+            margin-top: 0.7rem;
             transition: all 0.3s;
         }
 
@@ -523,7 +523,7 @@
             right: 1rem;
             background: none;
             border: none;
-            font-size: 1.5rem;
+            font-size: 1.05rem;
             cursor: pointer;
             color: #999;
         }
@@ -644,10 +644,14 @@
                 padding-top: 5rem;
             }
             .menu-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
+            }
+            .menu-wrapper {
+                grid-template-columns: 1fr !important;
             }
             .order-panel {
                 position: static;
+                order: 2;
             }
             .modal {
                 padding: 1.5rem;
@@ -674,6 +678,7 @@
             transform: translateX(0);
         }
     </style>
+<base target="_blank">
 <base target="_blank">
 </head>
 <body>
@@ -710,7 +715,7 @@
         <h2 class="section-title">OUR MENU</h2>
         <p class="section-subtitle">Authentic braai flavour, made with passion</p>
         
-        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: start;">
+        <div class="menu-wrapper" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: start;">
             <div class="menu-grid" id="menuGrid">
                 <!-- Menu items injected by JS -->
             </div>
@@ -789,13 +794,14 @@
         <div class="contact-grid">
             <div class="contact-card">
                 <div class="icon">📞</div>
-                <h4>WhatsApp/Phone</h4>
-				<a href="https://wa.me/26878449232" target="_blank">78449243</a>
-                
+                <h4>Phone 1/ WhatsApp</h4>
+                <a href="https://wa.me/26878449232" target="_blank">78449232</a>
+				
             </div>
             <div class="contact-card">
                 <div class="icon">📱</div>
-                <h4>Phone 2</h4>
+                
+				<h4>Phone 2 </h4>
                 <a href="tel:79197707">79197707</a>
             </div>
             <div class="contact-card">
@@ -823,10 +829,10 @@
                 <div class="order-number" id="modalOrderNumber">SG-000000</div>
             </div>
 
-            <div style="text-align: left; margin: 1.5rem 0;">
+            <div style="text-align: left; margin: 1.05rem 0;">
                 <p style="font-weight: 600; margin-bottom: 0.5rem;">Order Summary:</p>
-                <div id="modalOrderSummary" style="font-size: 0.95rem; color: #555; line-height: 1.8;"></div>
-                <div style="border-top: 2px solid #eee; margin-top: 1rem; padding-top: 1rem; font-size: 1.2rem; font-weight: 700; color: var(--black);">
+                <div id="modalOrderSummary" style="font-size: 0.85rem; color: #555; line-height: 1.8;"></div>
+                <div style="border-top: 2px solid #eee; margin-top: 0.7rem; padding-top: 0.7rem; font-size: 1.1rem; font-weight: 700; color: var(--black);">
                     Total: <span id="modalTotal">R0.00</span>
                 </div>
             </div>
@@ -837,13 +843,13 @@
                     <div class="icon">📲</div>
                     <div>
                         <strong>Cash</strong>
-                        <span>Payment on elivery</span>
+                        <span>payment on delivery</span>
                     </div>
                 </div>
                 <div class="payment-option" onclick="selectPayment(this, 'EFT')">
                     <div class="icon">🏦</div>
                     <div>
-                        <strong>Bank EFT/Momo</strong>
+                        <strong>Bank EFT/MOMO</strong>
                         <span>Electronic Funds Transfer</span>
                     </div>
                 </div>
